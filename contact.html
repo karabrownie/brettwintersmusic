@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+  <title>Contact — Brett Winters</title>
+</head>
+
+<body>
+  <header>
+    <div class="topnav" id="nav-links">
+      <a href="index.html" id="logo">Brett Winters</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+      <a href="music.html">Music</a>
+      <a href="shows.html">Shows</a>
+      <a href="javascript:void(0);" class="icon" onclick="navbar()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </header>
+
+  <div class="body-container">
+    <div class="form-contact">
+      <form name="contact">
+        <fieldset class="form-item">
+          <legend class="form-shift">Name *</legend>
+          <div class="fname">
+            <label for="fname">
+              <input type="text" id="fname" name="firstname" required>
+                <br>
+                <span>First Name</span>
+              </label>
+          </div>
+          <div class="lname">
+            <label for="lname">
+              <input type="text" id="lname" name="lastname" required>
+                <br>
+                <span>Last Name</span>
+              </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-item">
+          <legend class="form-shift">Email *</legend>
+          <label for="email" class="form-shift">
+            <input type="text" id="email" name="email" required><br>
+          </label>
+        </fieldset>
+        
+        <fieldset class="form-item">
+          <legend class="form-shift">Message *</legend>
+          <label for="message" class="form-shift">
+            <textarea id="message" name="message" required></textarea><br>
+          </label>
+        </fieldset>
+          
+        <input type="hidden" name="_subject" value="contact submission">
+
+        <input type="text" name="_honey" style="display:none">
+
+        <fieldset class="form-item">
+          <button type="submit" class="form-shift">Send</button>
+        </fieldset>
+      </form>
+
+      <p id="success-msg" hidden>Thank you! I will get back to you soon.</p>
+      <p id="error-msg" hidden>There was an error submitting your order. Please try again later.</p>
+    </div>
+
+    <div class="donations">
+      <h1>Donations</h1>
+      <p>To those who wish to donate — thank you! I am truly humbled. Your money will be directed towards new strings and the upkeep of this website.</p>
+      <a href="https://www.paypal.com/paypalme/BrettWintersWI">Paypal</a> |
+      <a href="#">Venmo</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="media-icons">
+      <a href="https://linktr.ee/brettwinters" class="fa fa-link" target="_blank"></a>
+      <a href="https://open.spotify.com/artist/7i32tg6VjlklR9itEibYCs?si=uPECrGM1RAaUa5n4tFql9A&nd=1" class="fa fa-spotify" target="_blank"></a>
+      <a href="https://music.apple.com/us/artist/brett-winters/1511207556" class="fa fa-apple" target="_blank"></a>
+      <a href="https://brettwinters.bandcamp.com/" class="fa fa-bandcamp" target="_blank"></a>
+      <a href="https://soundcloud.com/brettwinters" class="fa fa-soundcloud" target="_blank"></a>
+      <a href="https://www.youtube.com/channel/UCHPNNq4DB7mwKDrnJrMxefw" class="fa fa-youtube-play" target="_blank"></a>
+      <a href="https://www.instagram.com/brettwintersmusic/" class="fa fa-instagram" target="_blank"></a>
+      <a href="https://www.facebook.com/brettwintersmusic" class="fa fa-facebook" target="_blank"></a>
+    </div>
+    <p>Website development by <a href="https://karabrownie.github.io/books/contact.html" target="_blank">Kara Brown</a>.</p>
+  </footer>
+  
+</body>
+
+<script src="navbar.js"></script>
+<script>
+  // form
+  // currently sending to developer, not Brett.
+  const scriptURL = "https://formsubmit.co/brettwintersmusic@gmail.com";
+  const form = document.forms["contact"];
+  const success_msg = document.getElementById("success-msg");
+  const error_msg = document.getElementById("error-msg");
+
+  form.addEventListener("submit", e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: "POST", body: new FormData(form)})
+      .then
+      (
+        response => console.log("Success!", response),
+        form.hidden = true,
+        success_msg.hidden = false
+      )
+      .catch(error => console.error("Error!", error_msg.hidden = false))
+  })
+</script>
+
+</html>
