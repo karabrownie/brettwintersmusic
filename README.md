@@ -1,4 +1,4 @@
 # brettwintersmusic
 A website for Brett Winters' music. \
-Download to view: [Website Code Guide](website-code-guide.docx) \
+The website code guide is not uploaded here anymore. \
 Do **NOT** put any sensitive data in this repository - it is public.
