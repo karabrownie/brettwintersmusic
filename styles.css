@@ -10,7 +10,6 @@
 }
 
 /* COLORS */
-
 :root{
   --background-color: rgb(53, 71, 53);
   --my-yellow: rgb(220, 151, 63);
@@ -24,7 +23,6 @@
 * {
   font-family: "libre-baske";
   color: var(--font-color);
-  /* background-color: var(--background-color); */
 }
 
 a{
@@ -112,7 +110,6 @@ header{
   color:var(--white-hover);
 }
 
-
 .topnav .icon{
   display: none;
 }
@@ -197,7 +194,6 @@ This class makes the topnav look good on small screens
   grid-template-columns: 100%;
 }
 
-/* change for desktop display */
 @media screen and (min-width: 600px){
   .grid-container{
     grid-template-columns: repeat(3, 33%);
@@ -214,7 +210,6 @@ This class makes the topnav look good on small screens
     grid-template-columns: 50% 50%;
   }
 }
-
 
 .shows-display img{
   width: 75%;
@@ -242,7 +237,6 @@ This class makes the topnav look good on small screens
   font-size: 26px;
 }
 
-/* change for desktop display */
 @media screen and (min-width: 600px){
   .music-album-container p{
     font-size: 18px;
@@ -273,7 +267,6 @@ This class makes the topnav look good on small screens
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* width: 70%; */
   width: 300px;
   height: auto;
 }
@@ -284,7 +277,6 @@ This class makes the topnav look good on small screens
   margin-left: 23px;
 }
 
-/* change for mobile display */
 @media screen and (max-width: 906px){
   .about-img{
     margin: auto;
@@ -416,7 +408,6 @@ a#inline-icon:hover{
   margin: 6px 0 4px;
 }
 
-
 .form-contact input[type=text]#message, textarea{
   width: 420px;
   height: 60px;
@@ -424,7 +415,7 @@ a#inline-icon:hover{
   margin: 6px 0 4px;
 }
 
-/* change for dmobile display */
+/* change for mobile display */
 @media screen and (max-width: 450px){
   .form-contact input[type=text]#fname{
     width: 155px;
@@ -510,7 +501,6 @@ footer a:hover{
   color: var(--white-hover);
 }
 
-
 /* LYRIC STYLES */
 
 .lyrics{
@@ -523,4 +513,3 @@ footer a:hover{
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
